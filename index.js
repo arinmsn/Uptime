@@ -7,9 +7,16 @@ var http = require('http');
 var url = require('url');   // url library
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
-// When we are instatiating the HTTP Server
+// When we are instantiating the HTTP Server
 // We will need a way to read contents of 'cert.pem' and 'key.pem' files.
-// var fs = require('fs);    
+var fs = require('fs');    
+var _data = require('./lib/data');
+
+// Testing
+// @TODO delete this
+_data.delete('test', 'newFile', function(err) {
+    console.log('This was the error', err);
+});
 
 // The server should respond to all requests with a string
 var server = http.createServer(function(req,res) {
@@ -98,9 +105,8 @@ server.listen(config.port, function(){
 // Define the handlers
 var handlers = {};
 
-handlers.sample = function(data, callback) {
-    // Callback a http status code & payload object
-    callback(406, {'name' : 'sample handler'});
+handlers.ping = function(data, callback) {
+    callback(200);
 };
 
 // Not found 
@@ -110,5 +116,5 @@ handlers.notFound = function(data, callback) {
 
 // Define the request router
 var router = {
-    'sample' : handlers.sample
+    'ping' : handlers.ping
 };
