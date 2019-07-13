@@ -13,11 +13,24 @@ environments.staging = {
     'envName' : 'staging'
 };
 
+// environments.staging = {
+//     'httpport' : 3000,
+//     'httpsport' : 3001,
+//     'envName' : 'staging'
+// };
+
 // 'Production' environment
 environments.production = {
     'port' : 5000,
     'envName' : 'production'
 };
+
+// 'Production' environment
+// environments.production = {
+//     'httpPort' : 5000,
+//     'httpsPort' : 5001,
+//     'envName' : 'production'
+// };
 
 // Determine which environemnt was
 // passed as a command-line argument
