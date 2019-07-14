@@ -6,12 +6,13 @@
 var http = require('http');
 var url = require('url');   // url library
 var StringDecoder = require('string_decoder').StringDecoder;
-var config = require('./config');
+var config = require('./lib/config');
 // When we are instantiating the HTTP Server
 // We will need a way to read contents of 'cert.pem' and 'key.pem' files.
 var fs = require('fs');    
 var _data = require('./lib/data');
 var handlers = require('./lib/handlers');
+var helpers = require('./lib/helpers');
 
 // Testing
 // @TODO delete this
@@ -64,7 +65,7 @@ var server = http.createServer(function(req,res) {
         'queryStringObject' : queryStringObject,
         'method' : method,
         'headers' : headers,
-        'payload' : buffer
+        'payload' : helpers.parseJsonToObject(buffer)
     }
 
     // Route the request to the handler specified in the router
