@@ -11,6 +11,7 @@ var config = require('./config');
 // We will need a way to read contents of 'cert.pem' and 'key.pem' files.
 var fs = require('fs');    
 var _data = require('./lib/data');
+var handlers = require('./lib/handlers');
 
 // Testing
 // @TODO delete this
@@ -102,19 +103,8 @@ server.listen(config.port, function(){
 
 // };
 
-// Define the handlers
-var handlers = {};
-
-handlers.ping = function(data, callback) {
-    callback(200);
-};
-
-// Not found 
-handlers.notFound = function(data, callback) {
-    callback(404);
-};
-
 // Define the request router
 var router = {
-    'ping' : handlers.ping
+    'ping' : handlers.ping,
+    'users' : handlers.users
 };

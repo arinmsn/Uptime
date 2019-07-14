@@ -11,6 +11,7 @@ var environments = {};
 environments.staging = {
     'port' : 3000,
     'envName' : 'staging'
+    'hashingSecret' : 'thisIsASecret'
 };
 
 // environments.staging = {
@@ -22,7 +23,8 @@ environments.staging = {
 // 'Production' environment
 environments.production = {
     'port' : 5000,
-    'envName' : 'production'
+    'envName' : 'production',
+    'hashingSecret' : 'thisIsASecret'
 };
 
 // 'Production' environment
