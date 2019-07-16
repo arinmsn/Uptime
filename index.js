@@ -16,9 +16,9 @@ var helpers = require('./lib/helpers');
 
 // Testing
 // @TODO delete this
-_data.delete('test', 'newFile', function(err) {
-    console.log('This was the error', err);
-});
+// _data.delete('test', 'newFile', function(err) {
+//     console.log('This was the error', err);
+// });
 
 // The server should respond to all requests with a string
 var server = http.createServer(function(req,res) {
@@ -107,5 +107,6 @@ server.listen(config.port, function(){
 // Define the request router
 var router = {
     'ping' : handlers.ping,
-    'users' : handlers.users
+    'users' : handlers.users,
+    'tokens' : handlers.tokens
 };
