@@ -14,6 +14,12 @@ var _data = require('./lib/data');
 var handlers = require('./lib/handlers');
 var helpers = require('./lib/helpers');
 
+// @TODO Get rid of this
+helpers.sendTwilioSms('4151234567', 'Hello!', function(err) {
+    console.log('This was th error', err);
+    // If we get a '400' error, it means phone # doesn't exist.
+});
+
 // Testing
 // @TODO delete this
 // _data.delete('test', 'newFile', function(err) {
