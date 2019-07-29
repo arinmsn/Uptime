@@ -15,10 +15,11 @@ var handlers = require('./lib/handlers');
 var helpers = require('./lib/helpers');
 
 // @TODO Get rid of this
-helpers.sendTwilioSms('4151234567', 'Hello!', function(err) {
-    console.log('This was th error', err);
-    // If we get a '400' error, it means phone # doesn't exist.
-});
+// helpers.sendTwilioSms('4158375309', 'Hello!', function(err) {
+//     console.log('This was th error', err);
+//     // If we get a '400' error, it means phone # doesn't exist.
+//     // 'error false' means that SMS would have given through.
+// });
 
 // Testing
 // @TODO delete this
