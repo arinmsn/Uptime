@@ -61,4 +61,4 @@ typings/
 .next
 
 # HTTPS (the generated cert and key)
-/https
+https/
