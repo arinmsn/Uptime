@@ -61,5 +61,4 @@ typings/
 .next
 
 # HTTPS (the generated cert and key)
-cert.pem
-key.pem
+/https
